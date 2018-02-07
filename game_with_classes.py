@@ -1,6 +1,7 @@
 import random
 
 values = ['rock', 'paper', 'scissors']
+scores = {'WIN':0, 'TIE':0, 'LOSS':0}
 counter = 1
 
 
@@ -44,5 +45,7 @@ while True:
 
     result = player_choice.challenge(computer_choice)
 
-    print(result + "! Computer chose " + computer_choice.value)
+    scores[result] = scores[result] + 1
+
+    print(result + "! Computer chose " + computer_choice.value + "\nScores:" + str(scores))
     counter = counter + 1
